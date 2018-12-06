@@ -90,11 +90,11 @@ public class Bak {
 //        Core.bitwise_and(src, src, dst, edges);
 //        Imgcodecs.imwrite("C:/test/dst.bmp", dst);
 
-//        VisionMatrix oSrc1 = new VisionMatrix("C:/test/circle.bmp");
-//        VisionMatrix oDst1 = VisionTools.imgBasicFeature.contoursCalc(oSrc1);
+//        VisionMat oSrc1 = new VisionMat("C:/test/circle.bmp");
+//        VisionMat oDst1 = VisionTools.imgBasicFeature.contoursCalc(oSrc1);
 //        oDst1.save("C:/test/dst1.bmp");
 //
-//        VisionMatrix oSrc2 = new VisionMatrix("C:/test/arrow.bmp");
-//        VisionMatrix oDst2 = VisionTools.imgBasicFeature.contoursCalc(oSrc2);
+//        VisionMat oSrc2 = new VisionMat("C:/test/arrow.bmp");
+//        VisionMat oDst2 = VisionTools.imgBasicFeature.contoursCalc(oSrc2);
 //        oDst2.save("C:/test/dst2.bmp");
 }

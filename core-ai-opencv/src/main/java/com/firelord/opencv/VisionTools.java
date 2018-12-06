@@ -1,6 +1,6 @@
 package com.firelord.opencv;
 
-import com.firelord.opencv.image_basic_feature.ImgBasicFeature;
+import com.firelord.opencv.img.ImgBasicFeature;
 import com.firelord.opencv.video.VisionVideo4PC;
 
 /**

@@ -1,9 +1,8 @@
-package com.firelord.opencv.image_basic_feature;
+package com.firelord.opencv.img;
 
-import com.firelord.opencv.image_basic_feature.mo.VisionMatOfP;
-import com.firelord.opencv.image_basic_feature.mo.VisionMatOfPSet;
-import com.firelord.opencv.matrix.VisionMatrix;
-import com.firelord.opencv.matrix.VisionMatrixInit;
+import com.firelord.opencv.image.mo.VisionMatOfP;
+import com.firelord.opencv.image.mo.VisionMatOfPSet;
+import com.firelord.opencv.matrix.VisionMat;
 import com.firelord.opencv.mo.VisionRect;
 import com.firelord.opencv.mo.VisionRotateRect;
 import org.opencv.core.*;
@@ -27,12 +26,12 @@ public class ImgBasicFeature {
      * @param oSrc src matrix
      * @return dst matrix
      */
-    public VisionMatrix contoursCalc(VisionMatrix oSrc) {
-        VisionMatrix oDst = new VisionMatrix(oSrc, VisionMatrixInit.EYE);
+    public VisionMat contoursCalc(VisionMat oSrc) {
+        VisionMat oDst = VisionMat.initByEye(oSrc);
 
         //generate oGray and oBinary
-        VisionMatrix oGray = new VisionMatrix();
-        VisionMatrix oBinary = new VisionMatrix();
+        VisionMat oGray = new VisionMat();
+        VisionMat oBinary = new VisionMat();
 
         //threshold
         Imgproc.cvtColor(oSrc.getMat(), oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
@@ -59,10 +58,10 @@ public class ImgBasicFeature {
             double iLength = oVisionMatOfP.arcLength();
 //            System.out.println(iLength);
 
-            if (iArea >= 4000 && iArea <=8000) {
+            if (iArea >= 4000 && iArea <= 8000) {
                 Moments oMoments = Imgproc.moments(oVisionMatOfP.getMatOfPoint(), false);
-                int iX = (int) (oMoments.m10/oMoments.m00);
-                int iY = (int) (oMoments.m01/oMoments.m00);
+                int iX = (int) (oMoments.m10 / oMoments.m00);
+                int iY = (int) (oMoments.m01 / oMoments.m00);
                 System.out.println(iX);
                 System.out.println(iY);
 
@@ -71,15 +70,15 @@ public class ImgBasicFeature {
             }
         }
 
-        //destroy
+        //destroyBatch
         oGray.destroy();
         oBinary.destroy();
 
         return oDst;
     }
 
-    private VisionMatOfPSet contoursQuery(VisionMatrix oBinary) {
-        VisionMatrix oHierarchy = new VisionMatrix();
+    private VisionMatOfPSet contoursQuery(VisionMat oBinary) {
+        VisionMat oHierarchy = new VisionMat();
         List<MatOfPoint> lstMatOfPoint = new ArrayList<>();
         Imgproc.findContours(oBinary.getMat(), lstMatOfPoint, oHierarchy.getMat(),
                 Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE, new Point(0, 0));
@@ -88,7 +87,7 @@ public class ImgBasicFeature {
         return oVisionMatOfPSet;
     }
 
-    private void contoursDraw(VisionMatrix oDst, VisionMatOfPSet VisionMatOfPSet, int iIndex) {
+    private void contoursDraw(VisionMat oDst, VisionMatOfPSet VisionMatOfPSet, int iIndex) {
         Imgproc.drawContours(oDst.getMat(),
                 VisionMatOfPSet.getVisionMatOfPListOrig(), iIndex,
                 new Scalar(0, 0, 255), 1);
@@ -98,7 +97,7 @@ public class ImgBasicFeature {
 
     //#region histogramDisplay
 
-    public VisionMatrix histogramDisplay(VisionMatrix oSrc) {
+    public VisionMat histogramDisplay(VisionMat oSrc) {
         //gray
         Mat oGray = new Mat();
         Imgproc.cvtColor(oSrc.getMat(), oGray, Imgproc.COLOR_BGR2GRAY);
@@ -112,7 +111,7 @@ public class ImgBasicFeature {
         Core.normalize(oHistogram, oHistogram, 0, 255, Core.NORM_MINMAX);
 
         //gen oDst
-        VisionMatrix oDst = new VisionMatrix();
+        VisionMat oDst = new VisionMat();
         oDst.getMat().create(400, 400, oSrc.getMat().type());
         oDst.getMat().setTo(new Scalar(200, 200, 200));
         float[] arrHistogramData = new float[256];
@@ -146,13 +145,13 @@ public class ImgBasicFeature {
 
     //#region histogramEqualize
 
-    public VisionMatrix histogramEqualize(VisionMatrix oSrc) {
+    public VisionMat histogramEqualize(VisionMat oSrc) {
         //gray
         Mat oGray = new Mat();
         Imgproc.cvtColor(oSrc.getMat(), oGray, Imgproc.COLOR_BGR2GRAY);
 
         //equalize histogram
-        VisionMatrix oDst = new VisionMatrix();
+        VisionMat oDst = new VisionMat();
         Imgproc.equalizeHist(oGray, oDst.getMat());
         oGray.release();
         return oDst;
@@ -162,11 +161,11 @@ public class ImgBasicFeature {
 
     //#region histogramCompare
 
-    public double[] histogramCompare(VisionMatrix oSrc) {
+    public double[] histogramCompare(VisionMat oSrc) {
         //gray
         Mat oGray = new Mat();
         Imgproc.cvtColor(oSrc.getMat(), oGray, Imgproc.COLOR_BGR2GRAY);
-        VisionMatrix oDst = new VisionMatrix();
+        VisionMat oDst = new VisionMat();
         Imgproc.equalizeHist(oGray, oDst.getMat());
 
         //oHistogram1
@@ -194,7 +193,7 @@ public class ImgBasicFeature {
         arrDistance[5] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_CHISQR_ALT);
         arrDistance[6] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_KL_DIV);
 
-        //destroy
+        //destroyBatch
         oGray.release();
         oDst.destroy();
         oHistogram1.release();
@@ -207,7 +206,7 @@ public class ImgBasicFeature {
 
     //#region histogramBackProject
 
-    public VisionMatrix histogramBackProject(VisionMatrix oSrc, VisionMatrix oTemp) {
+    public VisionMat histogramBackProject(VisionMat oSrc, VisionMat oTemp) {
         //hsv
         Mat oHSV = new Mat();
         Imgproc.cvtColor(oTemp.getMat(), oHSV, Imgproc.COLOR_BGR2HSV);
@@ -221,7 +220,7 @@ public class ImgBasicFeature {
         Imgproc.cvtColor(oSrc.getMat(), oHSVSrc, Imgproc.COLOR_BGR2HSV);
 
         //oDst
-        VisionMatrix oDst = new VisionMatrix();
+        VisionMat oDst = new VisionMat();
         Imgproc.calcBackProject(Arrays.asList(oHSVSrc), new MatOfInt(0, 1),
                 oHistogram, oDst.getMat(), new MatOfFloat(0, 179, 0, 255), 1);
         Core.normalize(oDst.getMat(), oDst.getMat(), 0, 255, Core.NORM_MINMAX);
@@ -235,25 +234,23 @@ public class ImgBasicFeature {
     //#region templateQuery
 
     /**
-     * TODO:inaccuracy
      * match template
      *
-     * @param oTemp        VisionMatrix template
-     * @param oMatSrc      VisionMatrix src
-     * @param iMatchMethod 可选值:Imgproc.TM_SQDIFF/TM_SQDIFF_NORMED/TM_CCORR/
-     *                     TM_CCORR_NORMED/TM_CCOEFF/TM_CCOEFF_NORMED
-     * @return VisionMatrix dst
+     * @param oTemplate    VisionMat template
+     * @param oMatSrc      VisionMat src
+     * @param iMatchMethod 可选值:0~5(Imgproc.TM_*)
+     * @return VisionMat dst
      */
-    public VisionMatrix templateQuery(VisionMatrix oTemp, VisionMatrix oMatSrc, int iMatchMethod) {
+    public VisionMat templateQuery(VisionMat oTemplate, VisionMat oMatSrc, int iMatchMethod) {
         //match template
-        int iHeight = oMatSrc.getMat().rows() - oTemp.getMat().rows() + 1;
-        int iWidth = oMatSrc.getMat().cols() - oTemp.getMat().cols() + 1;
-        Mat oMatchRes = new Mat(iHeight, iWidth, CvType.CV_32FC1);
-        Imgproc.matchTemplate(oMatSrc.getMat(), oTemp.getMat(), oMatchRes,
+        int iHeight = oMatSrc.getMat().rows() - oTemplate.getMat().rows() + 1;
+        int iWidth = oMatSrc.getMat().cols() - oTemplate.getMat().cols() + 1;
+        VisionMat oMatchRes = VisionMat.initByWH(iWidth, iHeight, CvType.CV_32FC1);
+        Imgproc.matchTemplate(oMatSrc.getMat(), oTemplate.getMat(), oMatchRes.getMat(),
                 iMatchMethod);
 
         //analyse oMatchRes
-        Core.MinMaxLocResult oMinMaxLocResult = Core.minMaxLoc(oMatchRes);
+        Core.MinMaxLocResult oMinMaxLocResult = Core.minMaxLoc(oMatchRes.getMat());
         Point oMaxPoint = oMinMaxLocResult.maxLoc;
         Point oMinPoint = oMinMaxLocResult.minLoc;
         Point oMatchPoint;
@@ -264,15 +261,14 @@ public class ImgBasicFeature {
         }
 
         //gen oDst
-        VisionMatrix oDst = new VisionMatrix(oMatSrc, VisionMatrixInit.COPY);
+        VisionMat oDst = VisionMat.initByCopy(oMatSrc);
         Imgproc.rectangle(oDst.getMat(), oMatchPoint,
-                new Point(oMatchPoint.x + oTemp.getMat().cols(),
-                        oMatchPoint.y + oTemp.getMat().rows()),
+                new Point(oMatchPoint.x + oTemplate.getMat().cols(),
+                        oMatchPoint.y + oTemplate.getMat().rows()),
                 new Scalar(0, 0, 255), 2, 8, 0);
 
-        //destroy
-        oTemp.destroy();
-        oMatchRes.release();
+        //destroyBatch
+        VisionMat.destroyBatch(Arrays.asList(oTemplate, oMatchRes));
 
         //return
         return oDst;

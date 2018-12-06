@@ -6,30 +6,20 @@ import lombok.Setter;
 import lombok.ToString;
 import org.opencv.core.Rect;
 
+/**
+ * VisionRect
+ */
 @ToString
 @Builder
 public class VisionRect {
     //#region Fields
 
+    /**
+     * rect obj
+     */
     @Setter
     @Getter
     private Rect rect;
-
-    public int getWidth() {
-        return this.rect.width;
-    }
-
-    public int getHeight() {
-        return this.rect.height;
-    }
-
-    public int getX() {
-        return this.rect.x;
-    }
-
-    public int getY() {
-        return this.rect.y;
-    }
 
     //#endregion
 }

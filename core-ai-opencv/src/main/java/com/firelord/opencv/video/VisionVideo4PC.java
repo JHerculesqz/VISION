@@ -1,6 +1,6 @@
 package com.firelord.opencv.video;
 
-import com.firelord.opencv.matrix.VisionMatrix;
+import com.firelord.opencv.matrix.VisionMat;
 import org.opencv.videoio.VideoCapture;
 
 import java.util.concurrent.Executors;
@@ -48,7 +48,7 @@ public class VisionVideo4PC {
         else {
             this.videoOpen = false;
 
-            //destroy
+            //destroyBatch
             this.destroy();
 
             //callback whenOpenFail
@@ -58,10 +58,10 @@ public class VisionVideo4PC {
 
     //#endregion
 
-    //#region destroy
+    //#region destroyBatch
 
     public void destroy() {
-        //destroy timer
+        //destroyBatch timer
         if (this.timer != null && !this.timer.isShutdown()) {
             try {
                 this.timer.shutdown();
@@ -71,7 +71,7 @@ public class VisionVideo4PC {
             }
         }
 
-        //destroy videoCapture
+        //destroyBatch videoCapture
         if (this.videoCapture.isOpened()) {
             this.videoCapture.release();
         }
@@ -81,8 +81,8 @@ public class VisionVideo4PC {
 
     //#region grabImgFrame
 
-    public VisionMatrix grabImgFrame() {
-        VisionMatrix oSrc = new VisionMatrix();
+    public VisionMat grabImgFrame() {
+        VisionMat oSrc = new VisionMat();
         this.videoCapture.read(oSrc.getMat());
         return oSrc;
     }

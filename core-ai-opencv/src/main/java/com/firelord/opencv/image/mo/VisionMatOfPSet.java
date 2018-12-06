@@ -1,4 +1,4 @@
-package com.firelord.opencv.image_basic_feature.mo;
+package com.firelord.opencv.image.mo;
 
 import lombok.Getter;
 import lombok.Setter;
