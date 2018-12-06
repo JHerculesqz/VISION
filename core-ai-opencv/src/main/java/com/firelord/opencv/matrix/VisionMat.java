@@ -4,7 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
@@ -23,6 +26,14 @@ public class VisionMat {
     @Setter
     @Getter
     private Mat mat;
+
+    //#endregion
+
+    //#region Construction
+
+    public VisionMat() {
+        this.mat = new Mat();
+    }
 
     //#endregion
 
@@ -91,6 +102,25 @@ public class VisionMat {
         return oDst;
     }
 
+    public static VisionMat initByOnes(Size oSize, int iCvType) {
+        VisionMat oDst = new VisionMat();
+
+        Mat oMat = Mat.ones(oSize, iCvType);
+        oDst.setMat(oMat);
+
+        return oDst;
+    }
+
+    public static VisionMat initByCreate(int iRows, int iCols, int iCvType, Scalar oScalar) {
+        VisionMat oDst = new VisionMat();
+
+        Mat oMat = new Mat();
+        oMat.create(iRows, iCols, iCvType);
+        oMat.setTo(oScalar);
+
+        return oDst;
+    }
+
     /**
      * destroy
      */
@@ -120,6 +150,53 @@ public class VisionMat {
      */
     public void save(String strFilePath) {
         Imgcodecs.imwrite(strFilePath, this.mat);
+    }
+
+    //#endregion
+
+    //#region dataOp
+
+    /**
+     * get sub mat data
+     *
+     * @param iRow    start row index
+     * @param iCol    start col index
+     * @param iLength sub mat data length
+     * @return sub mat data
+     */
+    public float[] dataOpBySub(int iRow, int iCol, int iLength) {
+        float[] arrSubData = new float[iLength];
+        this.mat.get(iRow, iCol, arrSubData);
+        return arrSubData;
+    }
+
+    //#endregion
+
+    //#region imgOp
+
+    /**
+     * Image graying
+     *
+     * @param iColorCode color code
+     * @return Image graying VisionMat
+     */
+    public VisionMat imgOpGray(int iColorCode) {
+        VisionMat oGray = new VisionMat();
+
+        Imgproc.cvtColor(this.mat, oGray.getMat(), iColorCode);
+
+        return oGray;
+    }
+
+    /**
+     * Image HSV
+     *
+     * @return Image HSV
+     */
+    public VisionMat imgOpHSV() {
+        VisionMat oHSV = new VisionMat();
+        Imgproc.cvtColor(this.mat, oHSV.getMat(), Imgproc.COLOR_BGR2HSV);
+        return oHSV;
     }
 
     //#endregion

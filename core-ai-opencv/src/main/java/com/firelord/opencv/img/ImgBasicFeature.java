@@ -1,9 +1,10 @@
 package com.firelord.opencv.img;
 
+import com.firelord.opencv.canvas.VisionLine;
+import com.firelord.opencv.canvas.VisionRect;
 import com.firelord.opencv.image.mo.VisionMatOfP;
 import com.firelord.opencv.image.mo.VisionMatOfPSet;
 import com.firelord.opencv.matrix.VisionMat;
-import com.firelord.opencv.mo.VisionRect;
 import com.firelord.opencv.mo.VisionRotateRect;
 import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
@@ -30,11 +31,10 @@ public class ImgBasicFeature {
         VisionMat oDst = VisionMat.initByEye(oSrc);
 
         //generate oGray and oBinary
-        VisionMat oGray = new VisionMat();
         VisionMat oBinary = new VisionMat();
 
         //threshold
-        Imgproc.cvtColor(oSrc.getMat(), oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
+        VisionMat oGray = oSrc.imgOpGray(Imgproc.COLOR_BGR2GRAY);
         Imgproc.threshold(oGray.getMat(), oBinary.getMat(),
                 0, 255,
                 Imgproc.THRESH_BINARY_INV | Imgproc.THRESH_OTSU);
@@ -95,136 +95,151 @@ public class ImgBasicFeature {
 
     //#endregion
 
-    //#region histogramDisplay
+    //#region histogram
 
+    /**
+     * display histogram
+     *
+     * @param oSrc VisionMat
+     * @return VisionMat histogram
+     */
     public VisionMat histogramDisplay(VisionMat oSrc) {
         //gray
-        Mat oGray = new Mat();
-        Imgproc.cvtColor(oSrc.getMat(), oGray, Imgproc.COLOR_BGR2GRAY);
+        VisionMat oGray = oSrc.imgOpGray(Imgproc.COLOR_BGR2GRAY);
 
-        // calc histogram
-        List<Mat> lstImage = Arrays.asList(oGray);
-        Mat oMask = Mat.ones(oSrc.getMat().size(), CvType.CV_8UC1);
-        Mat oHistogram = new Mat();
-        Imgproc.calcHist(lstImage, new MatOfInt(0), oMask, oHistogram,
-                new MatOfInt(256), new MatOfFloat(0, 255));
-        Core.normalize(oHistogram, oHistogram, 0, 255, Core.NORM_MINMAX);
+        //calc histogram
+        VisionMat oMask = VisionMat.initByOnes(oSrc.getMat().size(), CvType.CV_8UC1);
+        VisionMat oHistogram = new VisionMat();
+        Imgproc.calcHist(Arrays.asList(oGray.getMat()), new MatOfInt(0), oMask.getMat(),
+                oHistogram.getMat(), new MatOfInt(256), new MatOfFloat(0, 255));
+        Core.normalize(oHistogram.getMat(), oHistogram.getMat(), 0, 255,
+                Core.NORM_MINMAX);
 
-        //gen oDst
-        VisionMat oDst = new VisionMat();
-        oDst.getMat().create(400, 400, oSrc.getMat().type());
-        oDst.getMat().setTo(new Scalar(200, 200, 200));
-        float[] arrHistogramData = new float[256];
-        oHistogram.get(0, 0, arrHistogramData);
+        //get histogram data
+        float[] arrHistogramData = oHistogram.dataOpBySub(0, 0, 256);
 
-        //draw histogram
+        VisionMat oDst = VisionMat.initByCreate(400, 400, oSrc.getMat().type(),
+                new Scalar(200, 200, 200));
         int iOffsetX = 50;
         int iOffsetY = 350;
-        Imgproc.line(oDst.getMat(), new Point(iOffsetX, 0), new Point(iOffsetX, iOffsetY),
-                new Scalar(0, 0, 0));
-        Imgproc.line(oDst.getMat(), new Point(iOffsetX, iOffsetY), new Point(400, iOffsetY),
-                new Scalar(0, 0, 0));
-        for (int i = 0; i < oHistogram.rows() - 1; i++) {
+        int iHeight = oHistogram.getMat().rows();
+        VisionLine.drawLine(oDst, iOffsetX, 0, iOffsetX, iOffsetY, new Scalar(0, 0, 0));
+        VisionLine.drawLine(oDst, iOffsetX, iOffsetY, 400, iOffsetY, new Scalar(0, 0, 0));
+        for (int i = 0; i < iHeight - 1; i++) {
             int y1 = (int) arrHistogramData[i];
-//            int y2 = (int) arrHistogramData[i + 1];
-            Rect oRect = new Rect();
-            oRect.x = iOffsetX + i;
-            oRect.y = iOffsetY - y1;
-            oRect.width = 1;
-            oRect.height = y1;
-            Imgproc.rectangle(oDst.getMat(), oRect.tl(), oRect.br(), new Scalar(15, 15, 15));
+            VisionRect oRect = VisionRect.init(iOffsetX + i, iOffsetY - y1,
+                    1, y1);
+            oRect.drawRect(oDst, new Scalar(15, 15, 15));
         }
 
-        //release
-        oGray.release();
+        //destroyBatch
+        VisionMat.destroyBatch(Arrays.asList(oGray, oMask, oHistogram));
 
         return oDst;
     }
 
-    //#endregion
-
-    //#region histogramEqualize
-
+    /**
+     * equalize histogram
+     *
+     * @param oSrc VisionMat
+     * @return equalize histogram
+     */
     public VisionMat histogramEqualize(VisionMat oSrc) {
         //gray
-        Mat oGray = new Mat();
-        Imgproc.cvtColor(oSrc.getMat(), oGray, Imgproc.COLOR_BGR2GRAY);
+        VisionMat oGray = oSrc.imgOpGray(Imgproc.COLOR_BGR2GRAY);
 
         //equalize histogram
         VisionMat oDst = new VisionMat();
-        Imgproc.equalizeHist(oGray, oDst.getMat());
-        oGray.release();
+        Imgproc.equalizeHist(oGray.getMat(), oDst.getMat());
+
+        //destroy
+        oGray.destroy();
         return oDst;
     }
 
-    //#endregion
-
-    //#region histogramCompare
-
+    /**
+     * TODO:not implement
+     *
+     * @param oSrc VisionMat
+     * @return compare histogram
+     */
     public double[] histogramCompare(VisionMat oSrc) {
         //gray
-        Mat oGray = new Mat();
-        Imgproc.cvtColor(oSrc.getMat(), oGray, Imgproc.COLOR_BGR2GRAY);
+        VisionMat oGray = oSrc.imgOpGray(Imgproc.COLOR_BGR2GRAY);
+
+        //equalize histogram
         VisionMat oDst = new VisionMat();
-        Imgproc.equalizeHist(oGray, oDst.getMat());
+        Imgproc.equalizeHist(oGray.getMat(), oDst.getMat());
 
-        //oHistogram1
-        List<Mat> arrImage1 = Arrays.asList(oGray);
-        Mat oMask = Mat.ones(oSrc.getMat().size(), CvType.CV_8UC1);
-        Mat oHistogram1 = new Mat();
-        Imgproc.calcHist(arrImage1, new MatOfInt(0), oMask, oHistogram1,
-                new MatOfInt(256), new MatOfFloat(0, 255));
-        Core.normalize(oHistogram1, oHistogram1, 0, 255, Core.NORM_MINMAX);
+        //calc histogram
+        VisionMat oMask = VisionMat.initByOnes(oSrc.getMat().size(), CvType.CV_8UC1);
+        VisionMat oHistogram = new VisionMat();
+        Imgproc.calcHist(Arrays.asList(oGray.getMat()), new MatOfInt(0), oMask.getMat(),
+                oHistogram.getMat(), new MatOfInt(256), new MatOfFloat(0, 255));
+        Core.normalize(oHistogram.getMat(), oHistogram.getMat(), 0, 255,
+                Core.NORM_MINMAX);
 
-        //oHistogram2
-        List<Mat> arrImage2 = Arrays.asList(oDst.getMat());
-        Mat oHistogram2 = new Mat();
-        Imgproc.calcHist(arrImage2, new MatOfInt(0), oMask, oHistogram2,
-                new MatOfInt(256), new MatOfFloat(0, 255));
-        Core.normalize(oHistogram2, oHistogram2, 0, 255, Core.NORM_MINMAX);
+        //calc histogram
+        VisionMat oHistogram2 = new VisionMat();
+        Imgproc.calcHist(Arrays.asList(oDst.getMat()), new MatOfInt(0), oMask.getMat(),
+                oHistogram2.getMat(), new MatOfInt(256), new MatOfFloat(0, 255));
+        Core.normalize(oHistogram2.getMat(), oHistogram2.getMat(), 0, 255,
+                Core.NORM_MINMAX);
 
         //compare
         double[] arrDistance = new double[7];
-        arrDistance[0] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_CORREL);
-        arrDistance[1] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_CHISQR);
-        arrDistance[2] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_INTERSECT);
-        arrDistance[3] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_BHATTACHARYYA);
-        arrDistance[4] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_HELLINGER);
-        arrDistance[5] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_CHISQR_ALT);
-        arrDistance[6] = Imgproc.compareHist(oHistogram1, oHistogram2, Imgproc.HISTCMP_KL_DIV);
+        arrDistance[0] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_CORREL);
+        arrDistance[1] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_CHISQR);
+        arrDistance[2] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_INTERSECT);
+        arrDistance[3] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_BHATTACHARYYA);
+        arrDistance[4] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_HELLINGER);
+        arrDistance[5] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_CHISQR_ALT);
+        arrDistance[6] = Imgproc.compareHist(oHistogram.getMat(), oHistogram2.getMat(),
+                Imgproc.HISTCMP_KL_DIV);
 
         //destroyBatch
-        oGray.release();
-        oDst.destroy();
-        oHistogram1.release();
-        oHistogram2.release();
+        VisionMat.destroyBatch(Arrays.asList(oGray, oMask, oDst, oHistogram, oHistogram2));
 
         return arrDistance;
     }
 
-    //#endregion
+    /**
+     * back project histogram
+     *
+     * @param oSrc      src visionMat
+     * @param oTemplate template visionMat
+     * @return back project VisionMat
+     */
+    public VisionMat histogramBackProject(VisionMat oSrc, VisionMat oTemplate) {
+        //oHSVTemplate
+        VisionMat oHSVTemplate = oTemplate.imgOpHSV();
 
-    //#region histogramBackProject
-
-    public VisionMat histogramBackProject(VisionMat oSrc, VisionMat oTemp) {
-        //hsv
-        Mat oHSV = new Mat();
-        Imgproc.cvtColor(oTemp.getMat(), oHSV, Imgproc.COLOR_BGR2HSV);
-        Mat oMask = Mat.ones(oTemp.getMat().size(), CvType.CV_8UC1);
-        Mat oHistogram = new Mat();
-        Imgproc.calcHist(Arrays.asList(oHSV), new MatOfInt(0, 1), oMask, oHistogram,
+        //calc histogram
+        VisionMat oMask = VisionMat.initByOnes(oTemplate.getMat().size(), CvType.CV_8UC1);
+        VisionMat oHistogram = new VisionMat();
+        Imgproc.calcHist(Arrays.asList(oHSVTemplate.getMat()),
+                new MatOfInt(0, 1), oMask.getMat(), oHistogram.getMat(),
                 new MatOfInt(30, 32), new MatOfFloat(0, 179, 0, 255));
 
         //oHSVSrc
-        Mat oHSVSrc = new Mat();
-        Imgproc.cvtColor(oSrc.getMat(), oHSVSrc, Imgproc.COLOR_BGR2HSV);
+        VisionMat oHSVSrc = oSrc.imgOpHSV();
 
-        //oDst
+        //back project
         VisionMat oDst = new VisionMat();
-        Imgproc.calcBackProject(Arrays.asList(oHSVSrc), new MatOfInt(0, 1),
-                oHistogram, oDst.getMat(), new MatOfFloat(0, 179, 0, 255), 1);
+        Imgproc.calcBackProject(Arrays.asList(oHSVSrc.getMat()),
+                new MatOfInt(0, 1), oHistogram.getMat(), oDst.getMat(),
+                new MatOfFloat(0, 179, 0, 255), 1);
         Core.normalize(oDst.getMat(), oDst.getMat(), 0, 255, Core.NORM_MINMAX);
         Imgproc.cvtColor(oDst.getMat(), oDst.getMat(), Imgproc.COLOR_GRAY2BGR);
+
+        //destroyBatch
+        VisionMat.destroyBatch(Arrays.asList(oHSVTemplate, oMask, oHistogram, oHSVSrc));
 
         return oDst;
     }
@@ -262,7 +277,7 @@ public class ImgBasicFeature {
 
         //gen oDst
         VisionMat oDst = VisionMat.initByCopy(oMatSrc);
-        Imgproc.rectangle(oDst.getMat(), oMatchPoint,
+        VisionRect.drawRect(oDst, oMatchPoint,
                 new Point(oMatchPoint.x + oTemplate.getMat().cols(),
                         oMatchPoint.y + oTemplate.getMat().rows()),
                 new Scalar(0, 0, 255), 2, 8, 0);

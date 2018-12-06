@@ -1,6 +1,6 @@
 package com.firelord.opencv.image.mo;
 
-import com.firelord.opencv.mo.VisionRect;
+import com.firelord.opencv.canvas.VisionRect;
 import com.firelord.opencv.mo.VisionRotateRect;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,9 +27,8 @@ public class VisionMatOfP {
 
     public VisionRect rectOuter() {
         Rect oRect = Imgproc.boundingRect(this.matOfPoint);
-        VisionRect oVisionRect = VisionRect.builder()
-                .rect(oRect)
-                .build();
+        VisionRect oVisionRect = new VisionRect();
+        oVisionRect.setRect(oRect);
         return oVisionRect;
     }
 
