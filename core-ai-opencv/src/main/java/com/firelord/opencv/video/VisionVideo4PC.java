@@ -7,6 +7,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * VisionVideo4PC
+ * TODO:need refactor
+ */
 public class VisionVideo4PC {
     //#region Fields
 

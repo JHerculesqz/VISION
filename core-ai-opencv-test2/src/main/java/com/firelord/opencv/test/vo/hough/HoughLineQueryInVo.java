@@ -1,14 +1,11 @@
-package com.firelord.opencv.test.vo;
+package com.firelord.opencv.test.vo.hough;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * HistogramEqualizeInVo
- */
 @ToString
-public class HistogramEqualizeInVo {
+public class HoughLineQueryInVo {
     //#region Fields
 
     /**
@@ -24,6 +21,13 @@ public class HistogramEqualizeInVo {
     @Setter
     @Getter
     private String filePathDst;
+
+    /**
+     * threshold
+     */
+    @Setter
+    @Getter
+    private int threshold;
 
     //#endregion
 }

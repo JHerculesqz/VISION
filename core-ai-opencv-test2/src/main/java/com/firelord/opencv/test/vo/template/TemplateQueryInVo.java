@@ -1,4 +1,4 @@
-package com.firelord.opencv.test.vo;
+package com.firelord.opencv.test.vo.template;
 
 import lombok.Getter;
 import lombok.Setter;

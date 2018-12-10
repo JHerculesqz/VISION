@@ -1,4 +1,4 @@
-package com.firelord.opencv.image.mo;
+package com.firelord.opencv.img.mo;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,10 +8,16 @@ import org.opencv.core.MatOfPoint;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * VisionMatOfPSet
+ */
 @ToString
 public class VisionMatOfPSet {
     //#region Fields
 
+    /**
+     * VisionMatOfP list
+     */
     @Setter
     @Getter
     private List<VisionMatOfP> visionMatOfPList = new ArrayList<>();
@@ -20,6 +26,11 @@ public class VisionMatOfPSet {
 
     //#region Construction
 
+    /**
+     * VisionMatOfPSet Construction
+     *
+     * @param lstMatOfPoint List<MatOfPoint>
+     */
     public VisionMatOfPSet(List<MatOfPoint> lstMatOfPoint) {
         for (MatOfPoint oMatOfPoint : lstMatOfPoint) {
             VisionMatOfP oVisionMatOfP = VisionMatOfP.builder()
@@ -33,10 +44,15 @@ public class VisionMatOfPSet {
 
     //#region getVisionMatOfPListOrig
 
+    /**
+     * get MatOfPoint list
+     *
+     * @return List<MatOfPoint>
+     */
     public List<MatOfPoint> getVisionMatOfPListOrig() {
         List<MatOfPoint> lstRes = new ArrayList<>();
 
-        for (VisionMatOfP oVisionMatOfP : this.getVisionMatOfPList()) {
+        for (VisionMatOfP oVisionMatOfP : this.visionMatOfPList) {
             lstRes.add(oVisionMatOfP.getMatOfPoint());
         }
 

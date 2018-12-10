@@ -102,6 +102,13 @@ public class VisionMat {
         return oDst;
     }
 
+    /**
+     * init by ones
+     *
+     * @param oSize   size
+     * @param iCvType cvType
+     * @return vision mat
+     */
     public static VisionMat initByOnes(Size oSize, int iCvType) {
         VisionMat oDst = new VisionMat();
 
@@ -111,12 +118,37 @@ public class VisionMat {
         return oDst;
     }
 
+    /**
+     * init by create
+     *
+     * @param iRows   width
+     * @param iCols   height
+     * @param iCvType cvType
+     * @param oScalar scalar
+     * @return vision mat
+     */
     public static VisionMat initByCreate(int iRows, int iCols, int iCvType, Scalar oScalar) {
         VisionMat oDst = new VisionMat();
 
         Mat oMat = new Mat();
         oMat.create(iRows, iCols, iCvType);
         oMat.setTo(oScalar);
+
+        return oDst;
+    }
+
+    /**
+     * init by zeros
+     *
+     * @param oSize   size
+     * @param iCvType cvType
+     * @return vision mat
+     */
+    public static VisionMat initZeros(Size oSize, int iCvType) {
+        VisionMat oDst = new VisionMat();
+
+        Mat oMat = Mat.zeros(oSize, iCvType);
+        oDst.setMat(oMat);
 
         return oDst;
     }
@@ -152,6 +184,31 @@ public class VisionMat {
         Imgcodecs.imwrite(strFilePath, this.mat);
     }
 
+    /**
+     * to buffer image
+     *
+     * @return BufferedImage
+     */
+    public BufferedImage toBufferImg() {
+        BufferedImage oBufferedImage;
+
+        int iWidth = this.getMat().width();
+        int iHeight = this.getMat().height();
+        int iChannels = this.getMat().channels();
+        byte[] arrSourcePixels = new byte[iWidth * iHeight * iChannels];
+        this.getMat().get(0, 0, arrSourcePixels);
+        if (this.getMat().channels() > 1) {
+            oBufferedImage = new BufferedImage(iWidth, iHeight, BufferedImage.TYPE_3BYTE_BGR);
+        } else {
+            oBufferedImage = new BufferedImage(iWidth, iHeight, BufferedImage.TYPE_BYTE_GRAY);
+        }
+        final byte[] arrTargetPixels = ((DataBufferByte) oBufferedImage.getRaster().getDataBuffer()).getData();
+        System.arraycopy(arrSourcePixels, 0, arrTargetPixels,
+                0, arrSourcePixels.length);
+
+        return oBufferedImage;
+    }
+
     //#endregion
 
     //#region dataOp
@@ -177,13 +234,12 @@ public class VisionMat {
     /**
      * Image graying
      *
-     * @param iColorCode color code
      * @return Image graying VisionMat
      */
-    public VisionMat imgOpGray(int iColorCode) {
+    public VisionMat imgOpGray() {
         VisionMat oGray = new VisionMat();
 
-        Imgproc.cvtColor(this.mat, oGray.getMat(), iColorCode);
+        Imgproc.cvtColor(this.mat, oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
 
         return oGray;
     }
@@ -201,34 +257,10 @@ public class VisionMat {
 
     //#endregion
 
-    //#region isEmpty
+    //#region ?bak
 
     public boolean isEmpty() {
         return this.getMat().empty();
-    }
-
-    //#endregion
-
-    //#region toBufferImg
-
-    public BufferedImage toBufferImg() {
-        BufferedImage oBufferedImage;
-
-        int iWidth = this.getMat().width();
-        int iHeight = this.getMat().height();
-        int iChannels = this.getMat().channels();
-        byte[] arrSourcePixels = new byte[iWidth * iHeight * iChannels];
-        this.getMat().get(0, 0, arrSourcePixels);
-        if (this.getMat().channels() > 1) {
-            oBufferedImage = new BufferedImage(iWidth, iHeight, BufferedImage.TYPE_3BYTE_BGR);
-        } else {
-            oBufferedImage = new BufferedImage(iWidth, iHeight, BufferedImage.TYPE_BYTE_GRAY);
-        }
-        final byte[] arrTargetPixels = ((DataBufferByte) oBufferedImage.getRaster().getDataBuffer()).getData();
-        System.arraycopy(arrSourcePixels, 0, arrTargetPixels,
-                0, arrSourcePixels.length);
-
-        return oBufferedImage;
     }
 
     //#endregion

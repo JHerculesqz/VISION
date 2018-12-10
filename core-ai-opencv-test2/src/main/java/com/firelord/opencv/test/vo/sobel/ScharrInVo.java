@@ -1,14 +1,11 @@
-package com.firelord.opencv.test.vo;
+package com.firelord.opencv.test.vo.sobel;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * HistogramDisplayInVo
- */
 @ToString
-public class HistogramDisplayInVo {
+public class ScharrInVo {
     //#region Fields
 
     /**
