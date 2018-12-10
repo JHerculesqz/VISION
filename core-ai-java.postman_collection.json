@@ -1,10 +1,405 @@
 {
 	"info": {
-		"_postman_id": "fe57cb94-b512-4552-8921-a78d41a64ea7",
+		"_postman_id": "6c33a939-baa5-4afb-bf6b-4aed5767f6d0",
 		"name": "core-ai-java",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "imageOp",
+			"item": [
+				{
+					"name": "blur",
+					"item": [
+						{
+							"name": "blur",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blur",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blur"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByGaussian",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blurByGaussian",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blurByGaussian"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByMedian",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blurByMedian",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blurByMedian"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByErode",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blurByErode",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blurByErode"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByBilateral",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blurByBilateral",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blurByBilateral"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByPyr",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blurByPyr",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blurByPyr"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByCustom",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\", \\\"type\\\": 1}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/blurByCustom",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"blurByCustom"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "morphology",
+					"item": [
+						{
+							"name": "morphology",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/morphology/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/morphology/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/morphology",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"morphology"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "threshold",
+					"item": [
+						{
+							"name": "threshold",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/threshold",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"threshold"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thresholdByAdp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/thresholdByAdp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"thresholdByAdp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "gray",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/gray",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"gray"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hsv",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/hsv",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"hsv"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
 		{
 			"name": "imageBasicFeature",
 			"item": [
