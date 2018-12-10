@@ -13,6 +13,15 @@ import com.firelord.opencv.test.vo.histogram.HistogramDisplayInVo;
 import com.firelord.opencv.test.vo.histogram.HistogramEqualizeInVo;
 import com.firelord.opencv.test.vo.hough.HoughCircleQueryInVo;
 import com.firelord.opencv.test.vo.hough.HoughLineQueryInVo;
+import com.firelord.opencv.test.vo.imgop.blur.BlurInVo;
+import com.firelord.opencv.test.vo.imgop.blur_by_bilateral.BlurByBilateralInVo;
+import com.firelord.opencv.test.vo.imgop.blur_by_custom.BlurByCustomInVo;
+import com.firelord.opencv.test.vo.imgop.blur_by_erode.BlurByErodeInVo;
+import com.firelord.opencv.test.vo.imgop.blur_by_gaussian.BlurByGaussianInVo;
+import com.firelord.opencv.test.vo.imgop.blur_by_median.BlurByMedianInVo;
+import com.firelord.opencv.test.vo.imgop.blur_by_pyr.BlurByPyrInVo;
+import com.firelord.opencv.test.vo.imgop.morphology.MorphologyInVo;
+import com.firelord.opencv.test.vo.imgop.threshold.ThresholdInVo;
 import com.firelord.opencv.test.vo.sobel.LaplianInVo;
 import com.firelord.opencv.test.vo.sobel.ScharrInVo;
 import com.firelord.opencv.test.vo.sobel.SobelInVo;
@@ -32,6 +41,226 @@ import java.util.Arrays;
 @Controller
 @RequestMapping("/opencv")
 public class DemoController {
+    //#region image op
+
+    //#region blur
+
+    @RequestMapping("/blur")
+    @ResponseBody
+    public RespVo blur(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurInVo oInVo = oReqVo.getReqBuVo(BlurInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blur(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/blurByGaussian")
+    @ResponseBody
+    public RespVo blurByGaussian(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurByGaussianInVo oInVo = oReqVo.getReqBuVo(BlurByGaussianInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blurByGaussian(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/blurByMedian")
+    @ResponseBody
+    public RespVo blurByMedian(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurByMedianInVo oInVo = oReqVo.getReqBuVo(BlurByMedianInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blurByMedian(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/blurByErode")
+    @ResponseBody
+    public RespVo blurByErode(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurByErodeInVo oInVo = oReqVo.getReqBuVo(BlurByErodeInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blurByErode(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/blurByBilateral")
+    @ResponseBody
+    public RespVo blurByBilateral(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurByBilateralInVo oInVo = oReqVo.getReqBuVo(BlurByBilateralInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blurByBilateral(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/blurByPyr")
+    @ResponseBody
+    public RespVo blurByPyr(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurByPyrInVo oInVo = oReqVo.getReqBuVo(BlurByPyrInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blurByPyr(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/blurByCustom")
+    @ResponseBody
+    public RespVo blurByCustom(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        BlurByCustomInVo oInVo = oReqVo.getReqBuVo(BlurByCustomInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.blurByCustom(oSrc, oInVo.getType());
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    //#endregion
+
+    //#region morphology
+
+    @RequestMapping("/morphology")
+    @ResponseBody
+    public RespVo morphology(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        MorphologyInVo oInVo = oReqVo.getReqBuVo(MorphologyInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.morphology(oSrc, oInVo.getOption());
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    //#endregion
+
+    //#region threshold
+
+    @RequestMapping("/threshold")
+    @ResponseBody
+    public RespVo threshold(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        ThresholdInVo oInVo = oReqVo.getReqBuVo(ThresholdInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.threshold(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/thresholdByAdp")
+    @ResponseBody
+    public RespVo thresholdByAdp(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        ThresholdInVo oInVo = oReqVo.getReqBuVo(ThresholdInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.thresholdByAdp(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/gray")
+    @ResponseBody
+    public RespVo gray(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        ThresholdInVo oInVo = oReqVo.getReqBuVo(ThresholdInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.gray(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    @RequestMapping("/hsv")
+    @ResponseBody
+    public RespVo hsv(@RequestBody ReqVo oReqVo) {
+        RespVo oRespVo = new RespVo();
+
+        //InVo
+        ThresholdInVo oInVo = oReqVo.getReqBuVo(ThresholdInVo.class);
+
+        //Provider
+        VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
+        VisionMat oDst = VisionTools.imgOP.hsv(oSrc);
+        oDst.save(oInVo.getFilePathDst());
+        VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
+
+        return oRespVo;
+    }
+
+    //#endregion
+
+    //#endregion
+
     //#region image basic feature
 
     //#region sobel

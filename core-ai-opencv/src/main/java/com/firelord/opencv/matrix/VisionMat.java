@@ -7,7 +7,6 @@ import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
@@ -225,34 +224,6 @@ public class VisionMat {
         float[] arrSubData = new float[iLength];
         this.mat.get(iRow, iCol, arrSubData);
         return arrSubData;
-    }
-
-    //#endregion
-
-    //#region imgOp
-
-    /**
-     * Image graying
-     *
-     * @return Image graying VisionMat
-     */
-    public VisionMat imgOpGray() {
-        VisionMat oGray = new VisionMat();
-
-        Imgproc.cvtColor(this.mat, oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
-
-        return oGray;
-    }
-
-    /**
-     * Image HSV
-     *
-     * @return Image HSV
-     */
-    public VisionMat imgOpHSV() {
-        VisionMat oHSV = new VisionMat();
-        Imgproc.cvtColor(this.mat, oHSV.getMat(), Imgproc.COLOR_BGR2HSV);
-        return oHSV;
     }
 
     //#endregion

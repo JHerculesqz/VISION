@@ -1,6 +1,7 @@
 package com.firelord.opencv.img;
 
 import com.firelord.component.str.StringUtilsEx;
+import com.firelord.opencv.VisionTools;
 import com.firelord.opencv.canvas.VisionCircle;
 import com.firelord.opencv.canvas.VisionLine;
 import com.firelord.opencv.canvas.VisionRect;
@@ -105,7 +106,7 @@ public class ImgBasicFeature {
                 0);
 
         //gray
-        VisionMat oGray = oSrc.imgOpGray();
+        VisionMat oGray = VisionTools.imgOP.gray(oSrc);
 
         //canny
         VisionMat oEdges = new VisionMat();
@@ -286,7 +287,7 @@ public class ImgBasicFeature {
         ContoursCalcOutMo oOutMo = new ContoursCalcOutMo();
 
         //threshold
-        VisionMat oGray = oInMo.getSrc().imgOpGray();
+        VisionMat oGray = VisionTools.imgOP.gray(oInMo.getSrc());
         VisionMat oBinary = new VisionMat();
         Imgproc.threshold(oGray.getMat(), oBinary.getMat(),
                 0, 255,
@@ -345,7 +346,7 @@ public class ImgBasicFeature {
      */
     public VisionMat histogramDisplay(VisionMat oSrc) {
         //gray
-        VisionMat oGray = oSrc.imgOpGray();
+        VisionMat oGray = VisionTools.imgOP.gray(oSrc);
 
         //calc histogram
         VisionMat oMask = VisionMat.initByOnes(oSrc.getMat().size(), CvType.CV_8UC1);
@@ -388,7 +389,7 @@ public class ImgBasicFeature {
      */
     public VisionMat histogramEqualize(VisionMat oSrc) {
         //gray
-        VisionMat oGray = oSrc.imgOpGray();
+        VisionMat oGray = VisionTools.imgOP.gray(oSrc);
 
         //equalize histogram
         VisionMat oDst = new VisionMat();
@@ -408,7 +409,7 @@ public class ImgBasicFeature {
      */
     public double[] histogramCompare(VisionMat oSrc) {
         //gray
-        VisionMat oGray = oSrc.imgOpGray();
+        VisionMat oGray = VisionTools.imgOP.gray(oSrc);
 
         //equalize histogram
         VisionMat oDst = new VisionMat();
@@ -461,7 +462,7 @@ public class ImgBasicFeature {
      */
     public VisionMat histogramBackProject(VisionMat oSrc, VisionMat oTemplate) {
         //oHSVTemplate
-        VisionMat oHSVTemplate = oTemplate.imgOpHSV();
+        VisionMat oHSVTemplate = VisionTools.imgOP.hsv(oTemplate);
 
         //calc histogram
         VisionMat oMask = VisionMat.initByOnes(oTemplate.getMat().size(), CvType.CV_8UC1);
@@ -471,7 +472,7 @@ public class ImgBasicFeature {
                 new MatOfInt(30, 32), new MatOfFloat(0, 179, 0, 255));
 
         //oHSVSrc
-        VisionMat oHSVSrc = oSrc.imgOpHSV();
+        VisionMat oHSVSrc = VisionTools.imgOP.hsv(oSrc);
 
         //back project
         VisionMat oDst = new VisionMat();
