@@ -1,0 +1,633 @@
+{
+	"info": {
+		"_postman_id": "fe57cb94-b512-4552-8921-a78d41a64ea7",
+		"name": "core-ai-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "imageBasicFeature",
+			"item": [
+				{
+					"name": "sobel",
+					"item": [
+						{
+							"name": "sobel",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/sobel/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/sobel/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/sobel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"sobel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "scharr",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/scharr/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/scharr/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/scharr",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"scharr"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "laplian",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/laplian/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/laplian/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/laplian",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"laplian"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "canny",
+					"item": [
+						{
+							"name": "cannyEdgeQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/cannyEdgeQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"cannyEdgeQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "cannyEdgeQuery2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery2/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery2/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/cannyEdgeQuery2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"cannyEdgeQuery2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "contours",
+					"item": [
+						{
+							"name": "contoursCalc1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src1.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug1/debug\\\", \\\"areaMin\\\": 4000, \\\"areaMax\\\": 8000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst1.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"contoursCalc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contoursCalc2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src2.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug2/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst2.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"contoursCalc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contoursCalc3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src3.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug3/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst3.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"contoursCalc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contoursCalc4",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src4.png\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug4/debug\\\", \\\"areaMin\\\": 0, \\\"areaMax\\\": 100000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst4.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"contoursCalc"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "histogram",
+					"item": [
+						{
+							"name": "houghLineQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghLineQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghLineQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/houghLineQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"houghLineQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "houghLinePQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghLineQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghLineQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/houghLinePQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"houghLinePQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "houghCircleQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/houghCircleQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"houghCircleQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "histogramDisplay",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramDisplay/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/histogramDisplay/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/histogramDisplay",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"histogramDisplay"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "histogramEqualize",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramEqualize/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/histogramEqualize/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/histogramEqualize",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"histogramEqualize"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "histogramCompare",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramCompare/src.png\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/histogramCompare",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"histogramCompare"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "histogramBackProject",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramBackProject/src.png\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/histogramBackProject/template.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/histogramBackProject/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/histogramBackProject",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"histogramBackProject"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "template",
+					"item": [
+						{
+							"name": "templateQuery1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src.png\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template.png\\\", \\\"matchType\\\":0, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/templateQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"templateQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "templateQuery2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src1.bmp\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template1.png\\\", \\\"matchType\\\":4, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst1.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/templateQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"templateQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "templateQuery3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src2.bmp\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template2.png\\\", \\\"matchType\\\":1, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst2.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/opencv/templateQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"opencv",
+										"templateQuery"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}

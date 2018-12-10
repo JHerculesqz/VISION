@@ -26,12 +26,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
 
+/**
+ * DemoController
+ */
 @Controller
 @RequestMapping("/opencv")
-public class OpenCVController {
-    //#region Fields
-
-    //#endregion
+public class DemoController {
+    //#region image basic feature
 
     //#region sobel
 
@@ -301,6 +302,8 @@ public class OpenCVController {
 
         return oRespVo;
     }
+
+    //#endregion
 
     //#endregion
 }

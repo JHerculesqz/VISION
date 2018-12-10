@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * HoughCircleQueryInVo
+ */
 @ToString
 public class HoughCircleQueryInVo {
     //#region Fields

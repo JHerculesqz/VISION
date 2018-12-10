@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * HoughLineQueryInVo
+ */
 @ToString
 public class HoughLineQueryInVo {
     //#region Fields
