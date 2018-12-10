@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.hough;
+package com.firelord.opencv.test.vo.img_basic_feature.hough;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * HoughCircleQueryInVo
+ * HoughLineQueryInVo
  */
 @ToString
-public class HoughCircleQueryInVo {
+public class HoughLineQueryInVo {
     //#region Fields
 
     /**

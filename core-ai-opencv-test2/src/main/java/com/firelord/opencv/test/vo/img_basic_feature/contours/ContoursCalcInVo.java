@@ -1,4 +1,4 @@
-package com.firelord.opencv.test.vo.contours;
+package com.firelord.opencv.test.vo.img_basic_feature.contours;
 
 import lombok.Getter;
 import lombok.Setter;

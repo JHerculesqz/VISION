@@ -2,7 +2,7 @@ package com.firelord.opencv.test;
 
 import com.firelord.javafx.JavaFXUtils;
 import com.firelord.opencv.VisionTools;
-import com.firelord.opencv.matrix.VisionMat;
+import com.firelord.opencv.mat.VisionMat;
 import com.firelord.opencv.video.VisionVideo4PCCallback;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

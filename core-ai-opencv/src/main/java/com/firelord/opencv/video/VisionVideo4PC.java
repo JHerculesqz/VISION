@@ -1,6 +1,6 @@
 package com.firelord.opencv.video;
 
-import com.firelord.opencv.matrix.VisionMat;
+import com.firelord.opencv.mat.VisionMat;
 import org.opencv.videoio.VideoCapture;
 
 import java.util.concurrent.Executors;

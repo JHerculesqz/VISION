@@ -1,6 +1,6 @@
 package com.firelord.opencv.img;
 
-import com.firelord.opencv.matrix.VisionMat;
+import com.firelord.opencv.mat.VisionMat;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
 

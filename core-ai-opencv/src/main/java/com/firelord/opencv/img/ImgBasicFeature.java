@@ -7,7 +7,7 @@ import com.firelord.opencv.canvas.VisionLine;
 import com.firelord.opencv.canvas.VisionRect;
 import com.firelord.opencv.canvas.VisionRotateRect;
 import com.firelord.opencv.img.mo.*;
-import com.firelord.opencv.matrix.VisionMat;
+import com.firelord.opencv.mat.VisionMat;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
 

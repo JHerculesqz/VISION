@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.histogram;
+package com.firelord.opencv.test.vo.img_basic_feature.sobel;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * HistogramEqualizeInVo
+ * SobelInVo
  */
 @ToString
-public class HistogramEqualizeInVo {
+public class SobelInVo {
     //#region Fields
 
     /**

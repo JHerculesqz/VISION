@@ -1,4 +1,4 @@
-package com.firelord.opencv.matrix;
+package com.firelord.opencv.mat;
 
 import lombok.Getter;
 import lombok.Setter;

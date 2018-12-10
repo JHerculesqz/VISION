@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.canny;
+package com.firelord.opencv.test.vo.img_basic_feature.histogram;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * CannyEdgeQueryInVo
+ * HistogramEqualizeInVo
  */
 @ToString
-public class CannyEdgeQueryInVo {
+public class HistogramBackProjectInVo {
     //#region Fields
 
     /**
@@ -17,6 +17,13 @@ public class CannyEdgeQueryInVo {
     @Setter
     @Getter
     private String filePathSrc;
+
+    /**
+     * template file path
+     */
+    @Setter
+    @Getter
+    private String filePathTemplate;
 
     /**
      * dst file path

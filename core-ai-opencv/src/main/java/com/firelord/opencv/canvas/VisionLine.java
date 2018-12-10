@@ -1,6 +1,6 @@
 package com.firelord.opencv.canvas;
 
-import com.firelord.opencv.matrix.VisionMat;
+import com.firelord.opencv.mat.VisionMat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;

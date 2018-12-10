@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.template;
+package com.firelord.opencv.test.vo.img_basic_feature.sobel;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * TemplateQueryInVo
+ * ScharrInVo
  */
 @ToString
-public class TemplateQueryInVo {
+public class ScharrInVo {
     //#region Fields
 
     /**
@@ -17,20 +17,6 @@ public class TemplateQueryInVo {
     @Setter
     @Getter
     private String filePathSrc;
-
-    /**
-     * template file path
-     */
-    @Setter
-    @Getter
-    private String filePathTemplate;
-
-    /**
-     * match method type
-     */
-    @Setter
-    @Getter
-    private int matchType;
 
     /**
      * dst file path

@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.sobel;
+package com.firelord.opencv.test.vo.img_basic_feature.sobel;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * SobelInVo
+ * LaplianInVo
  */
 @ToString
-public class SobelInVo {
+public class LaplianInVo {
     //#region Fields
 
     /**

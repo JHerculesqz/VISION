@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.histogram;
+package com.firelord.opencv.test.vo.img_basic_feature.histogram;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * HistogramEqualizeInVo
+ * HistogramDisplayInVo
  */
 @ToString
-public class HistogramCompareInVo {
+public class HistogramDisplayInVo {
     //#region Fields
 
     /**
@@ -17,6 +17,13 @@ public class HistogramCompareInVo {
     @Setter
     @Getter
     private String filePathSrc;
+
+    /**
+     * dst file path
+     */
+    @Setter
+    @Getter
+    private String filePathDst;
 
     //#endregion
 }

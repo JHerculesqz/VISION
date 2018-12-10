@@ -1,14 +1,14 @@
-package com.firelord.opencv.test.vo.histogram;
+package com.firelord.opencv.test.vo.img_basic_feature.hough;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 /**
- * HistogramEqualizeInVo
+ * HoughCircleQueryInVo
  */
 @ToString
-public class HistogramBackProjectInVo {
+public class HoughCircleQueryInVo {
     //#region Fields
 
     /**
@@ -19,18 +19,18 @@ public class HistogramBackProjectInVo {
     private String filePathSrc;
 
     /**
-     * template file path
-     */
-    @Setter
-    @Getter
-    private String filePathTemplate;
-
-    /**
      * dst file path
      */
     @Setter
     @Getter
     private String filePathDst;
+
+    /**
+     * threshold
+     */
+    @Setter
+    @Getter
+    private int threshold;
 
     //#endregion
 }

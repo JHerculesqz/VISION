@@ -1,6 +1,6 @@
 package com.firelord.opencv.img.mo;
 
-import com.firelord.opencv.matrix.VisionMat;
+import com.firelord.opencv.mat.VisionMat;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

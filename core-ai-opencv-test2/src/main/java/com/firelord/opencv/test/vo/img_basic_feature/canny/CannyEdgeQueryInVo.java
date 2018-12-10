@@ -1,4 +1,4 @@
-package com.firelord.opencv.test.vo.canny;
+package com.firelord.opencv.test.vo.img_basic_feature.canny;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import lombok.ToString;
  * CannyEdgeQueryInVo
  */
 @ToString
-public class CannyEdgeQuery2InVo {
+public class CannyEdgeQueryInVo {
     //#region Fields
 
     /**
