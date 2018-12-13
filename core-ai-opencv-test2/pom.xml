@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.firelord</groupId>
     <artifactId>core-ai-opencv-test2</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-a1</version>
     <packaging>jar</packaging>
     <name>core-ai-opencv-test2</name>
     <description></description>
@@ -32,12 +32,12 @@
         <dependency>
             <groupId>com.github.jherculesqz</groupId>
             <artifactId>core-fw-spring</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.0-a1</version>
         </dependency>
         <dependency>
             <groupId>com.github.jherculesqz</groupId>
             <artifactId>core-ai-opencv</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.0-a1</version>
         </dependency>
     </dependencies>
 </project>

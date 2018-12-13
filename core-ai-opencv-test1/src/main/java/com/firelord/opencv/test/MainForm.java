@@ -1,6 +1,5 @@
 package com.firelord.opencv.test;
 
-import com.firelord.javafx.JavaFXUtils;
 import com.firelord.opencv.VisionTools;
 import com.firelord.opencv.mat.VisionMat;
 import com.firelord.opencv.video.VisionVideo4PCCallback;
@@ -38,7 +37,7 @@ public class MainForm {
             public void whenGrabImgFrame() {
                 VisionMat oSrc = VisionTools.video4PC.grabImgFrame();
                 //#region contourseCalc
-                VisionMat oDst = VisionTools.imgBasicFeature.contoursCalc(oSrc);
+//                VisionMat oDst = VisionTools.imgBasicFeature.contoursCalc(oSrc);
                 //#endregion
                 //#region histogram
 //                VisionMat oDst = new VisionMat(oSrc, VisionMatrixInit.COPY);
@@ -60,7 +59,7 @@ public class MainForm {
 //                VisionMat oDst = VisionTools.imgBasicFeature.templateQuery(oTemp, oSrc,
 //                        5);
                 //#endregion
-                JavaFXUtils.imageView.updateImageView(oDst.toBufferImg(), imageView);
+//                JavaFXUtils.imageView.updateImageView(oDst.toBufferImg(), imageView);
             }
 
             @Override

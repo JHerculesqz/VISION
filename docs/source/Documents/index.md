@@ -10,5 +10,6 @@ date: 2018-12-05 17:57:04
 ## Mat ##
 
 ## Image manipulation ##
+[Image manipulation](/VISION/Image-Manipulation)
 
 ## Basic image features ##

@@ -6,6 +6,476 @@
 	},
 	"item": [
 		{
+			"name": "mat",
+			"item": [
+				{
+					"name": "dataOpBySub",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpBySub/src.png\\\", \\\"row\\\": 0, \\\"col\\\": 0, \\\"length\\\": 256}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpBySub",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpBySub"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpBySplit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpBySplit/src.png\\\", \\\"filePathDstPrefix\\\":\\\"C:/test/mat/dataOpBySplit/dst\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpBySplit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpBySplit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByMerge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrcLst\\\":[\\\"C:/test/mat/dataOpByMerge/src0.bmp\\\", \\\"C:/test/mat/dataOpByMerge/src1.bmp\\\", \\\"C:/test/mat/dataOpByMerge/src2.bmp\\\"], \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByMerge/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByMerge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByMerge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByBinSegment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByBinSegment/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByBinSegment/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByBinSegment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByBinSegment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByAdd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc1\\\":\\\"C:/test/mat/dataOpByAdd/src1.png\\\", \\\"filePathSrc2\\\":\\\"C:/test/mat/dataOpByAdd/src2.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByAdd/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByAdd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByAdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpBySubtract",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc1\\\":\\\"C:/test/mat/dataOpBySubtract/src1.png\\\", \\\"filePathSrc2\\\":\\\"C:/test/mat/dataOpBySubtract/src2.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpBySubtract/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpBySubtract",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpBySubtract"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByMultiply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc1\\\":\\\"C:/test/mat/dataOpByMultiply/src1.png\\\", \\\"filePathSrc2\\\":\\\"C:/test/mat/dataOpByMultiply/src2.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByMultiply/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByMultiply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByMultiply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByDivide",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc1\\\":\\\"C:/test/mat/dataOpByDivide/src1.png\\\", \\\"filePathSrc2\\\":\\\"C:/test/mat/dataOpByDivide/src2.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByDivide/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByDivide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByDivide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByBright",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByBright/src.png\\\", \\\"v\\\": 10, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByBright/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByBright",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByBright"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByContrast",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByContrast/src.png\\\", \\\"v\\\": 2, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByContrast/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByContrast",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByContrast"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByAddWeight",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByAddWeight/src.png\\\", \\\"alpha\\\": 0.9, \\\"gamma\\\": 1, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByAddWeight/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByAddWeight",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByAddWeight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByAnd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc1\\\":\\\"C:/test/mat/dataOpByAnd/src1.png\\\", \\\"filePathSrc2\\\":\\\"C:/test/mat/dataOpByAnd/src2.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByAnd/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByAnd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByAnd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByOr",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc1\\\":\\\"C:/test/mat/dataOpByOr/src1.png\\\", \\\"filePathSrc2\\\":\\\"C:/test/mat/dataOpByOr/src2.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByOr/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByOr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByOr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByNot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByNot/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByNot/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByNot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByNot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataOpByNormalAndAbs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathDst\\\":\\\"C:/test/mat/dataOpByNormalAndAbs/dst.bmp\\\"}\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/mat/dataOpByNormalAndAbs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"mat",
+								"dataOpByNormalAndAbs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "imageOp",
 			"item": [
 				{
@@ -25,17 +495,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blur",
+									"raw": "http://localhost:9000/imgOp/blur",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"blur"
 									]
 								}
@@ -56,17 +526,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst2.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blurByGaussian",
+									"raw": "http://localhost:9000/imgOp/blurByGaussian",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"blurByGaussian"
 									]
 								}
@@ -87,17 +557,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst3.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blurByMedian",
+									"raw": "http://localhost:9000/imgOp/blurByMedian",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"blurByMedian"
 									]
 								}
@@ -118,17 +588,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst4.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blurByErode",
+									"raw": "http://localhost:9000/imgOp/blurByErode",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"blurByErode"
 									]
 								}
@@ -149,17 +619,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst5.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blurByBilateral",
+									"raw": "http://localhost:9000/imgOp/blurByBilateral",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"blurByBilateral"
 									]
 								}
@@ -180,17 +650,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst6.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blurByPyr",
+									"raw": "http://localhost:9000/imgOp/blurByPyr",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"blurByPyr"
 									]
 								}
@@ -211,17 +681,79 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst.bmp\\\", \\\"type\\\": 1}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst7.bmp\\\", \\\"type\\\": 1}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/blurByCustom",
+									"raw": "http://localhost:9000/imgOp/blurByCustom",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
+										"blurByCustom"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByCustom2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst8.bmp\\\", \\\"type\\\": 2}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgOp/blurByCustom",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgOp",
+										"blurByCustom"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "blurByCustom3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/blur/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/blur/dst8.bmp\\\", \\\"type\\\": 3}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgOp/blurByCustom",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgOp",
 										"blurByCustom"
 									]
 								}
@@ -248,17 +780,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/morphology/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/morphology/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/morphology/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/morphology/dst.bmp\\\", \\\"option\\\": 0}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/morphology",
+									"raw": "http://localhost:9000/imgOp/morphology",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"morphology"
 									]
 								}
@@ -285,17 +817,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/threshold",
+									"raw": "http://localhost:9000/imgOp/threshold",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"threshold"
 									]
 								}
@@ -316,17 +848,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst2.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/thresholdByAdp",
+									"raw": "http://localhost:9000/imgOp/thresholdByAdp",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"thresholdByAdp"
 									]
 								}
@@ -347,17 +879,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst3.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/gray",
+									"raw": "http://localhost:9000/imgOp/gray",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"gray"
 									]
 								}
@@ -378,17 +910,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst.bmp\\\", \\\"option\\\": 1}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_op/threshold/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_op/threshold/dst4.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/hsv",
+									"raw": "http://localhost:9000/imgOp/hsv",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgOp",
 										"hsv"
 									]
 								}
@@ -423,14 +955,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/sobel/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/sobel/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/sobel",
+									"raw": "http://localhost:9000/imgBasicFeature/sobel",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"sobel"
 									]
 								}
@@ -454,14 +986,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/scharr/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/scharr/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/scharr",
+									"raw": "http://localhost:9000/imgBasicFeature/scharr",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"scharr"
 									]
 								}
@@ -485,14 +1017,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/laplian/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/laplian/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/laplian",
+									"raw": "http://localhost:9000/imgBasicFeature/laplian",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"laplian"
 									]
 								}
@@ -522,14 +1054,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/cannyEdgeQuery",
+									"raw": "http://localhost:9000/imgBasicFeature/cannyEdgeQuery",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"cannyEdgeQuery"
 									]
 								}
@@ -553,15 +1085,114 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery2/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery2/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/cannyEdgeQuery2",
+									"raw": "http://localhost:9000/imgBasicFeature/cannyEdgeQuery2",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"cannyEdgeQuery2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "hough",
+					"item": [
+						{
+							"name": "houghLineQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghLineQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghLineQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgBasicFeature/houghLineQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgBasicFeature",
+										"houghLineQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "houghLinePQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghLineQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghLineQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgBasicFeature/houghLinePQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgBasicFeature",
+										"houghLinePQuery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "houghCircleQuery",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgBasicFeature/houghCircleQuery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgBasicFeature",
+										"houghCircleQuery"
 									]
 								}
 							},
@@ -590,14 +1221,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src1.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug1/debug\\\", \\\"areaMin\\\": 4000, \\\"areaMax\\\": 8000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"contoursCalc"
 									]
 								}
@@ -621,14 +1252,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src2.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug2/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst2.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"contoursCalc"
 									]
 								}
@@ -652,14 +1283,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src3.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug3/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst3.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"contoursCalc"
 									]
 								}
@@ -683,14 +1314,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src4.png\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug4/debug\\\", \\\"areaMin\\\": 0, \\\"areaMax\\\": 100000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst4.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/contoursCalc",
+									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"contoursCalc"
 									]
 								}
@@ -703,99 +1334,6 @@
 				{
 					"name": "histogram",
 					"item": [
-						{
-							"name": "houghLineQuery",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghLineQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghLineQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:9000/opencv/houghLineQuery",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "9000",
-									"path": [
-										"opencv",
-										"houghLineQuery"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "houghLinePQuery",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghLineQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghLineQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:9000/opencv/houghLinePQuery",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "9000",
-									"path": [
-										"opencv",
-										"houghLinePQuery"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "houghCircleQuery",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:9000/opencv/houghCircleQuery",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "9000",
-									"path": [
-										"opencv",
-										"houghCircleQuery"
-									]
-								}
-							},
-							"response": []
-						},
 						{
 							"name": "histogramDisplay",
 							"request": {
@@ -813,14 +1351,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramDisplay/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/histogramDisplay/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/histogramDisplay",
+									"raw": "http://localhost:9000/imgBasicFeature/histogramDisplay",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"histogramDisplay"
 									]
 								}
@@ -844,14 +1382,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramEqualize/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/histogramEqualize/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/histogramEqualize",
+									"raw": "http://localhost:9000/imgBasicFeature/histogramEqualize",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"histogramEqualize"
 									]
 								}
@@ -875,14 +1413,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramCompare/src.png\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/histogramCompare",
+									"raw": "http://localhost:9000/imgBasicFeature/histogramCompare",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"histogramCompare"
 									]
 								}
@@ -906,14 +1444,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/histogramBackProject/src.png\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/histogramBackProject/template.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/histogramBackProject/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/histogramBackProject",
+									"raw": "http://localhost:9000/imgBasicFeature/histogramBackProject",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"histogramBackProject"
 									]
 								}
@@ -943,14 +1481,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src.png\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template.png\\\", \\\"matchType\\\":0, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/templateQuery",
+									"raw": "http://localhost:9000/imgBasicFeature/templateQuery",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"templateQuery"
 									]
 								}
@@ -974,14 +1512,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src1.bmp\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template1.png\\\", \\\"matchType\\\":4, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/templateQuery",
+									"raw": "http://localhost:9000/imgBasicFeature/templateQuery",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"templateQuery"
 									]
 								}
@@ -1005,14 +1543,14 @@
 									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src2.bmp\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template2.png\\\", \\\"matchType\\\":1, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst2.bmp\\\"}\"\r\n}"
 								},
 								"url": {
-									"raw": "http://localhost:9000/opencv/templateQuery",
+									"raw": "http://localhost:9000/imgBasicFeature/templateQuery",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "9000",
 									"path": [
-										"opencv",
+										"imgBasicFeature",
 										"templateQuery"
 									]
 								}

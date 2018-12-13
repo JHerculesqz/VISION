@@ -29,7 +29,7 @@ public class VisionMatOfPSet {
     /**
      * VisionMatOfPSet Construction
      *
-     * @param lstMatOfPoint List<MatOfPoint>
+     * @param lstMatOfPoint MatOfPoint list
      */
     public VisionMatOfPSet(List<MatOfPoint> lstMatOfPoint) {
         for (MatOfPoint oMatOfPoint : lstMatOfPoint) {
@@ -47,7 +47,7 @@ public class VisionMatOfPSet {
     /**
      * get MatOfPoint list
      *
-     * @return List<MatOfPoint>
+     * @return MatOfPoint list
      */
     public List<MatOfPoint> getVisionMatOfPListOrig() {
         List<MatOfPoint> lstRes = new ArrayList<>();

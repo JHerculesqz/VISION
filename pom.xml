@@ -6,11 +6,10 @@
     <groupId>com.github.jherculesqz</groupId>
     <artifactId>core-ai-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0-a1</version>
     <modules>
-
         <module>core-ai-opencv</module>
-        <module>core-ai-opencv-test2</module>
         <module>core-ai-opencv-test1</module>
+        <module>core-ai-opencv-test2</module>
     </modules>
 </project>

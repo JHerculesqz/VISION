@@ -245,7 +245,8 @@ public class ImgOP {
     /**
      * Image graying
      *
-     * @return Image graying VisionMat
+     * @param oSrc src VisionMat
+     * @return dst VisionMat
      */
     public VisionMat gray(VisionMat oSrc) {
         VisionMat oGray = new VisionMat();
@@ -258,6 +259,7 @@ public class ImgOP {
     /**
      * Image HSV
      *
+     * @param oSrc src VisionMat
      * @return Image HSV
      */
     public VisionMat hsv(VisionMat oSrc) {

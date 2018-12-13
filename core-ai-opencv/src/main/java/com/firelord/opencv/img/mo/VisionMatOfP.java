@@ -119,6 +119,7 @@ public class VisionMatOfP {
      * @param oVisionRect       VisionRect
      * @param oVisionRotateRect VisionRotateRect
      * @param oVisionMatOfP     VisionMatOfP
+     * @param iIndex            int
      * @return VisionMatOfPInfo
      */
     public VisionMatOfPInfo getInfo(VisionRect oVisionRect, VisionRotateRect oVisionRotateRect,
