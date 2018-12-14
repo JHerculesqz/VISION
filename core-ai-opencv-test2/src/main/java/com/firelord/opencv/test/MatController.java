@@ -217,7 +217,7 @@ public class MatController {
 
         //Provider
         VisionMat oSrc = VisionMat.initByFilePath(oInVo.getFilePathSrc());
-        VisionMat oDst = VisionMat.dataOpByAddWeight(oSrc, 0.5, 30);
+        VisionMat oDst = VisionMat.dataOpByAddWeight(oSrc, oInVo.getAlpha(), oInVo.getGamma());
         oDst.save(oInVo.getFilePathDst());
         VisionMat.destroyBatch(Arrays.asList(oSrc, oDst));
 

@@ -236,6 +236,7 @@ public class ImgBasicFeature {
     }
 
     /**
+     * TODO:need refactor
      * hough circle query
      *
      * @param oSrc src vision mat
@@ -323,7 +324,7 @@ public class ImgBasicFeature {
                 //debug
                 if (!StringUtilsEx.isNullOrEmpty(oInMo.getFilePath4Debug())) {
                     oOutMo.getDst().save(oInMo.getFilePath4Debug() +
-                            iIndex + ".bmp");
+                            iIndex + ".png");
                 }
             }
         }
