@@ -179,14 +179,18 @@
             <artifactId>core-fw</artifactId>
             <version>1.0.0-a1</version>
         </dependency>
-
         <dependency>
-            <groupId>org.opencv</groupId>
+            <groupId>org.openpnp</groupId>
             <artifactId>opencv</artifactId>
-            <version>3.4.4</version>
-            <systemPath>${env.SYSTEMROOT}/opencv-344/opencv-344.jar</systemPath>
-            <!--<systemPath>/opt/opencv-344/opencv-344.jar</systemPath>-->
-            <scope>system</scope>
+            <version>3.2.0-1</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.opencv</groupId>-->
+            <!--<artifactId>opencv</artifactId>-->
+            <!--<version>3.4.4</version>-->
+            <!--<systemPath>${env.SYSTEMROOT}/opencv-344/opencv-344.jar</systemPath>-->
+            <!--&lt;!&ndash;<systemPath>/opt/opencv-344/opencv-344.jar</systemPath>&ndash;&gt;-->
+            <!--<scope>system</scope>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

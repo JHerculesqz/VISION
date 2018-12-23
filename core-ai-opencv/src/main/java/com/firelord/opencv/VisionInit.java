@@ -1,6 +1,7 @@
 package com.firelord.opencv;
 
 import com.firelord.component.os.env.EnvUtilsEx;
+import nu.pattern.OpenCV;
 
 /**
  * VisionInit
@@ -19,6 +20,13 @@ public class VisionInit {
         } else {
             System.load("/opt/opencv-344/x86/opencv_java344.dll");
         }
+    }
+
+    /**
+     * initEx
+     */
+    public static void initEx() {
+        OpenCV.loadShared();
     }
 
     //#endregion

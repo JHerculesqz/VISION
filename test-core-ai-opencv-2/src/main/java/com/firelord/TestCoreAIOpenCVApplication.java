@@ -12,7 +12,7 @@ public class TestCoreAIOpenCVApplication {
     //#region main
 
     public static void main(String[] args) {
-        VisionInit.init();
+        VisionInit.initEx();
         SpringApplication.run(TestCoreAIOpenCVApplication.class, args);
     }
 
