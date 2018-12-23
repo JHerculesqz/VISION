@@ -1,44 +1,13 @@
 {
 	"info": {
 		"_postman_id": "6c33a939-baa5-4afb-bf6b-4aed5767f6d0",
-		"name": "core-ai-java",
+		"name": "1.1.core-ai-java",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "mat",
 			"item": [
-				{
-					"name": "dataOpBySub",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpBySub/src.png\\\", \\\"row\\\": 0, \\\"col\\\": 0, \\\"length\\\": 256}\"\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:9000/mat/dataOpBySub",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"mat",
-								"dataOpBySub"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "dataOpBySplit",
 					"request": {
@@ -270,7 +239,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByBright/src.png\\\", \\\"v\\\": 10, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByBright/dst.bmp\\\"}\"\r\n}"
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByBright/src.png\\\", \\\"v\\\": 40, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByBright/dst.bmp\\\"}\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:9000/mat/dataOpByBright",
@@ -332,7 +301,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByAddWeight/src.png\\\", \\\"alpha\\\": 0.9, \\\"gamma\\\": 1, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByAddWeight/dst.bmp\\\"}\"\r\n}"
+							"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/mat/dataOpByAddWeight/src.png\\\", \\\"alpha\\\": 0.9, \\\"gamma\\\": 10, \\\"filePathDst\\\":\\\"C:/test/mat/dataOpByAddWeight/dst.bmp\\\"}\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:9000/mat/dataOpByAddWeight",
@@ -1181,7 +1150,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/dst.bmp\\\", \\\"threshold\\\": 200}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/houghCircleQuery/dst.bmp\\\", \\\"threshold\\\": 100}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/houghCircleQuery",
@@ -1218,7 +1187,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src1.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug1/debug\\\", \\\"areaMin\\\": 4000, \\\"areaMax\\\": 8000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst1.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src1.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug1/debug\\\", \\\"areaMin\\\": 1000, \\\"areaMax\\\": 8000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
@@ -1478,7 +1447,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src.png\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template.png\\\", \\\"matchType\\\":0, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/templateQuery/src.png\\\", \\\"filePathTemplate\\\":\\\"C:/test/ai/image_basic_feature/templateQuery/template.png\\\", \\\"matchType\\\":0, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/templateQuery/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/templateQuery",
@@ -1509,7 +1478,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/templateQuery/src1.bmp\\\", \\\"filePathTemplate\\\":\\\"C:/test/image_basic_feature/templateQuery/template1.png\\\", \\\"matchType\\\":4, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/templateQuery/dst1.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/templateQuery/src1.bmp\\\", \\\"filePathTemplate\\\":\\\"C:/test/ai/image_basic_feature/templateQuery/template1.png\\\", \\\"matchType\\\":4, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/templateQuery/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/templateQuery",
