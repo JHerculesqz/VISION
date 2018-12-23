@@ -1,6 +1,6 @@
 package com.firelord.opencv.img;
 
-import com.firelord.component.str.StringUtilsEx;
+import com.firelord.component.ds.str.StringUtilsEx;
 import com.firelord.opencv.VisionTools;
 import com.firelord.opencv.canvas.VisionCircle;
 import com.firelord.opencv.canvas.VisionLine;
