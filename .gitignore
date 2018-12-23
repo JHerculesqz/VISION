@@ -1,9 +1,8 @@
-core-ai-opencv-test2/target/classes/com/firelord/opencv/CoreAIOpenCVTestApplication.class
-core-ai-opencv-test2/target/classes/com/firelord/opencv/test/OpenCVController.class
-core-ai-opencv-test1/target/
-core-ai-opencv/target/
 .idea/
 *.iml
 docs/themes/
-core-ai-opencv-test2/target/
 z.tools/null
+core-ai-opencv/target/
+test-core-ai-opencv-2/target/
+test-core-ai-opencv-1/target/
+z.tools/opencv-344/opencv-344.jar
