@@ -298,7 +298,7 @@ public class ImgBasicFeature {
         VisionMat oHierarchy = new VisionMat();
         List<MatOfPoint> lstContours = new ArrayList<>();
         Imgproc.findContours(oBinary.getMat(), lstContours, oHierarchy.getMat(),
-                Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE, new Point(0, 0));
+                Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_NONE, new Point(0, 0));
         VisionMatOfPSet oVisionMatOfPSet = new VisionMatOfPSet(lstContours);
 
         //measure contours
