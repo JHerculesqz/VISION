@@ -1020,7 +1020,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/cannyEdgeQuery/dst.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/cannyEdgeQuery/src.png\\\", \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/cannyEdgeQuery/dst.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/cannyEdgeQuery",
@@ -1187,7 +1187,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src1.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug1/debug\\\", \\\"areaMin\\\": 1000, \\\"areaMax\\\": 8000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst1.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/src1.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/debug1/debug\\\", \\\"areaMin\\\": 1000, \\\"areaMax\\\": 8000, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/dst1.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
@@ -1218,7 +1218,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src2.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug2/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst2.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/src2.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/debug2/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/dst2.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
@@ -1249,7 +1249,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src3.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug3/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst3.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/src3.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/debug3/debug\\\", \\\"areaMin\\\": 1, \\\"areaMax\\\": 10000, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/dst3.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
@@ -1280,7 +1280,69 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/image_basic_feature/contoursCalc/src4.png\\\", \\\"filePath4Debug\\\":\\\"C:/test/image_basic_feature/contoursCalc/debug4/debug\\\", \\\"areaMin\\\": 0, \\\"areaMax\\\": 100000, \\\"filePathDst\\\":\\\"C:/test/image_basic_feature/contoursCalc/dst4.bmp\\\"}\"\r\n}"
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/src4.png\\\", \\\"filePath4Debug\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/debug4/debug\\\", \\\"areaMin\\\": 0, \\\"areaMax\\\": 100000, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/dst4.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgBasicFeature",
+										"contoursCalc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contoursCalc5",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/src5.bmp\\\", \\\"filePath4Debug\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/debug5/debug\\\", \\\"areaMin\\\": 1000, \\\"areaMax\\\": 100000, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/dst5.bmp\\\"}\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"imgBasicFeature",
+										"contoursCalc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contoursCalc6",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reqBuVoStr\": \"{\\\"filePathSrc\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/src6.jpg\\\", \\\"filePath4Debug\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/debug6/debug\\\", \\\"areaMin\\\": 0, \\\"areaMax\\\": 100000, \\\"filePathDst\\\":\\\"C:/test/ai/image_basic_feature/contoursCalc/dst6.bmp\\\"}\"\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:9000/imgBasicFeature/contoursCalc",
