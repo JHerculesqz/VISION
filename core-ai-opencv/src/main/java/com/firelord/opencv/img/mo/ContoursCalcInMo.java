@@ -22,13 +22,6 @@ public class ContoursCalcInMo {
     private VisionMat src;
 
     /**
-     * if debug,debug file path
-     */
-    @Setter
-    @Getter
-    private String filePath4Debug;
-
-    /**
      * min area
      */
     @Setter
@@ -41,6 +34,20 @@ public class ContoursCalcInMo {
     @Setter
     @Getter
     private double areaMax;
+
+    /**
+     * true:debug
+     */
+    @Setter
+    @Getter
+    private boolean debug;
+
+    /**
+     * if debug,debug dir path
+     */
+    @Setter
+    @Getter
+    private String dirPath4Debug;
 
     //#endregion
 }

@@ -1,6 +1,5 @@
 package com.firelord.opencv.img;
 
-import com.firelord.component.ds.str.StringUtilsEx;
 import com.firelord.opencv.VisionTools;
 import com.firelord.opencv.canvas.VisionCircle;
 import com.firelord.opencv.canvas.VisionLine;
@@ -293,6 +292,10 @@ public class ImgBasicFeature {
         Imgproc.threshold(oGray.getMat(), oBinary.getMat(),
                 0, 255,
                 Imgproc.THRESH_BINARY_INV | Imgproc.THRESH_OTSU);
+        if (oInMo.isDebug()) {
+            oGray.save(oInMo.getDirPath4Debug() + "debug_gray.bmp");
+            oBinary.save(oInMo.getDirPath4Debug() + "debug_bin.bmp");
+        }
 
         //find contours
         VisionMat oHierarchy = new VisionMat();
@@ -300,6 +303,9 @@ public class ImgBasicFeature {
         Imgproc.findContours(oBinary.getMat(), lstContours, oHierarchy.getMat(),
                 Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_NONE, new Point(0, 0));
         VisionMatOfPSet oVisionMatOfPSet = new VisionMatOfPSet(lstContours);
+        if (oInMo.isDebug()) {
+            oHierarchy.save(oInMo.getDirPath4Debug() + "debug_hierarchy.bmp");
+        }
 
         //measure contours
         oOutMo.setDst(VisionMat.initByEye(oInMo.getSrc()));
@@ -320,11 +326,13 @@ public class ImgBasicFeature {
                         oVisionMatOfPSet.getVisionMatOfPListOrig(), iIndex,
                         new Scalar(0, 0, 255), 1);
                 oOutMo.getContourInfoLst().add(oInfo);
-
-                //debug
-                if (!StringUtilsEx.isNullOrEmpty(oInMo.getFilePath4Debug())) {
-                    oOutMo.getDst().save(oInMo.getFilePath4Debug() +
-                            iIndex + ".png");
+                VisionCircle.drawCircle(oOutMo.getDst(),
+                        oInfo.getContourCenterX(), oInfo.getContourCenterY(), 1,
+                        new Scalar(0, 255, 0),
+                        2, 8, 0);
+                if (oInMo.isDebug()) {
+                    oOutMo.getDst().save(oInMo.getDirPath4Debug() +
+                            "debug_" + iIndex + ".bmp");
                 }
             }
         }

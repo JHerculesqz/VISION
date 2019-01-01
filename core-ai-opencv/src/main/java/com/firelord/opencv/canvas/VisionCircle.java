@@ -23,7 +23,7 @@ public class VisionCircle {
      * @param iLineType  line type
      * @param iShift     shift
      */
-    public static void drawCircle(VisionMat oSrc, int iX, int iY, int iR, Scalar oScalar,
+    public static void drawCircle(VisionMat oSrc, double iX, double iY, int iR, Scalar oScalar,
                                   int iThickness, int iLineType, int iShift) {
         Imgproc.circle(oSrc.getMat(), new Point(iX, iY), iR, oScalar,
                 iThickness, iLineType, iShift);

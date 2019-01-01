@@ -469,6 +469,20 @@ public class VisionMat {
     }
 
     /**
+     * dataOpByAndEx
+     *
+     * @param oSrc1 src1 vision mat
+     * @param oSrc2 src2 vision mat
+     * @param oMask mask vision mat
+     * @return dst vision mat
+     */
+    public static VisionMat dataOpByAndEx(VisionMat oSrc1, VisionMat oSrc2, VisionMat oMask) {
+        VisionMat oDst = new VisionMat();
+        Core.bitwise_and(oSrc1.getMat(), oSrc2.getMat(), oDst.getMat(), oMask.getMat());
+        return oDst;
+    }
+
+    /**
      * dataOpByOr
      *
      * @param oSrc1 src1 vision mat

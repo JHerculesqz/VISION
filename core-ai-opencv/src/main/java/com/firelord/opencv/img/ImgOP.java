@@ -8,6 +8,58 @@ import org.opencv.imgproc.Imgproc;
  * ImgOP
  */
 public class ImgOP {
+    //#region gray
+
+    /**
+     * Image graying
+     *
+     * @param oSrc src VisionMat
+     * @return dst VisionMat
+     */
+    public VisionMat gray(VisionMat oSrc) {
+        VisionMat oGray = new VisionMat();
+
+        Imgproc.cvtColor(oSrc.getMat(), oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
+
+        return oGray;
+    }
+
+    //#endregion
+
+    //#region hsv
+
+    /**
+     * Image HSV
+     *
+     * @param oSrc src VisionMat
+     * @return Image HSV
+     */
+    public VisionMat hsv(VisionMat oSrc) {
+        VisionMat oHSV = new VisionMat();
+        Imgproc.cvtColor(oSrc.getMat(), oHSV.getMat(), Imgproc.COLOR_BGR2HSV);
+        return oHSV;
+    }
+
+    //#endregion
+
+    //#region maskByFilterColor
+
+    /**
+     * maskByFilterColor
+     *
+     * @param oHSV        HSV VisionMat
+     * @param oColorStart start rgb color in
+     * @param oColorEnd   end rgb color in
+     * @return Mask VisionMat
+     */
+    public VisionMat maskByFilterColor(VisionMat oHSV, Scalar oColorStart, Scalar oColorEnd) {
+        VisionMat oMask = new VisionMat();
+        Core.inRange(oHSV.getMat(), oColorStart, oColorEnd, oMask.getMat());
+        return oMask;
+    }
+
+    //#endregion
+
     //#region blur
 
     /**
@@ -240,32 +292,6 @@ public class ImgOP {
         oGray.release();
 
         return oDst;
-    }
-
-    /**
-     * Image graying
-     *
-     * @param oSrc src VisionMat
-     * @return dst VisionMat
-     */
-    public VisionMat gray(VisionMat oSrc) {
-        VisionMat oGray = new VisionMat();
-
-        Imgproc.cvtColor(oSrc.getMat(), oGray.getMat(), Imgproc.COLOR_BGR2GRAY);
-
-        return oGray;
-    }
-
-    /**
-     * Image HSV
-     *
-     * @param oSrc src VisionMat
-     * @return Image HSV
-     */
-    public VisionMat hsv(VisionMat oSrc) {
-        VisionMat oHSV = new VisionMat();
-        Imgproc.cvtColor(oSrc.getMat(), oHSV.getMat(), Imgproc.COLOR_BGR2HSV);
-        return oHSV;
     }
 
     //#endregion
