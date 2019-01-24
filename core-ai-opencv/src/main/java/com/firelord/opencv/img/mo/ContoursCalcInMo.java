@@ -1,7 +1,6 @@
 package com.firelord.opencv.img.mo;
 
 import com.firelord.opencv.mat.VisionMat;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,11 +9,17 @@ import lombok.ToString;
  * ContoursCalcInMo
  */
 @ToString
-@Builder
 public class ContoursCalcInMo {
     //#region Fields
 
     //#region Common
+
+    /**
+     * src file path
+     */
+    @Setter
+    @Getter
+    private String filePathSrc;
 
     /**
      * src vision mat
@@ -22,6 +27,13 @@ public class ContoursCalcInMo {
     @Setter
     @Getter
     private VisionMat src;
+
+    /**
+     * dst file path
+     */
+    @Setter
+    @Getter
+    private String filePathDst;
 
     /**
      * min area
@@ -61,27 +73,11 @@ public class ContoursCalcInMo {
 
     @Setter
     @Getter
-    private int a2R1;
+    private double[] a2RGBStart;
 
     @Setter
     @Getter
-    private int a2G1;
-
-    @Setter
-    @Getter
-    private int a2B1;
-
-    @Setter
-    @Getter
-    private int a2R2;
-
-    @Setter
-    @Getter
-    private int a2G2;
-
-    @Setter
-    @Getter
-    private int a2B2;
+    private double[] a2RGBEnd;
 
     //#endregion
 
@@ -95,6 +91,14 @@ public class ContoursCalcInMo {
     private int a3Morph;
 
     //#endregion
+
+    //#endregion
+
+    //#region calc
+
+    public void calc() {
+        this.setSrc(VisionMat.initByFilePath(this.getFilePathSrc()));
+    }
 
     //#endregion
 }
