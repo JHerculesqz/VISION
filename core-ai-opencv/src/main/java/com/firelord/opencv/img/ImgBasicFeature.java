@@ -277,37 +277,43 @@ public class ImgBasicFeature {
 
     //#region contours
 
-    /**
-     * measure contours
-     *
-     * @param oInMo ContoursCalcInMo
-     * @return ContoursCalcOutMo
-     */
-    public ContoursCalcOutMo contoursCalc(ContoursCalcInMo oInMo) {
-        ContoursCalcOutMo oOutMo = new ContoursCalcOutMo();
+    //#region Common
 
-        //threshold
-        VisionMat oGray = VisionTools.imgOP.gray(oInMo.getSrc());
-        VisionMat oBinary = new VisionMat();
-        Imgproc.threshold(oGray.getMat(), oBinary.getMat(),
-                0, 255,
-                Imgproc.THRESH_BINARY_INV | Imgproc.THRESH_OTSU);
-        if (oInMo.isDebug()) {
-            oGray.save(oInMo.getDirPath4Debug() + "debug_gray.bmp");
-            oBinary.save(oInMo.getDirPath4Debug() + "debug_bin.bmp");
-        }
+    public ContoursCalcOutMo contoursCalc(ContoursCalcInMo oInMo,
+                                          IContoursCalc oIContoursCalc) {
+        //prepare
+        VisionMat oPrepare = oIContoursCalc.prepare(oInMo);
 
-        //find contours
+        //calc
+        VisionMatOfPSet oVisionMatOfPSet = oIContoursCalc.calc(oPrepare, oInMo);
+
+        //measure
+        ContoursCalcOutMo oOutMo = oIContoursCalc.measure(oVisionMatOfPSet, oInMo);
+
+        return oOutMo;
+    }
+
+    public VisionMatOfPSet contoursCalc4Calc(VisionMat oPrepare, ContoursCalcInMo oInMo) {
+        //calc
         VisionMat oHierarchy = new VisionMat();
         List<MatOfPoint> lstContours = new ArrayList<>();
-        Imgproc.findContours(oBinary.getMat(), lstContours, oHierarchy.getMat(),
+        Imgproc.findContours(oPrepare.getMat(), lstContours, oHierarchy.getMat(),
                 Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_NONE, new Point(0, 0));
         VisionMatOfPSet oVisionMatOfPSet = new VisionMatOfPSet(lstContours);
         if (oInMo.isDebug()) {
             oHierarchy.save(oInMo.getDirPath4Debug() + "debug_hierarchy.bmp");
         }
 
-        //measure contours
+        //destroyBatch
+        VisionMat.destroyBatch(Arrays.asList(oHierarchy));
+
+        return oVisionMatOfPSet;
+    }
+
+    public ContoursCalcOutMo contoursCalc4Measure(VisionMatOfPSet oVisionMatOfPSet,
+                                                  ContoursCalcInMo oInMo) {
+        ContoursCalcOutMo oOutMo = new ContoursCalcOutMo();
+
         oOutMo.setDst(VisionMat.initByEye(oInMo.getSrc()));
         for (VisionMatOfP oVisionMatOfP : oVisionMatOfPSet.getVisionMatOfPList()) {
             int iIndex = oVisionMatOfPSet.getVisionMatOfPList().indexOf(oVisionMatOfP);
@@ -337,11 +343,38 @@ public class ImgBasicFeature {
             }
         }
 
-        //destroyBatch
-        VisionMat.destroyBatch(Arrays.asList(oGray, oBinary, oHierarchy));
+        return oOutMo;
+    }
+
+    //#endregion
+
+    //#region contoursCalc1
+
+    public ContoursCalcOutMo contoursCalc1(ContoursCalcInMo oInMo) {
+        ContoursCalcOutMo oOutMo = contoursCalc(oInMo, new AbstractContoursCalc() {
+            @Override
+            public VisionMat prepareEx(ContoursCalcInMo oInMo) {
+                //threshold
+                VisionMat oGray = VisionTools.imgOP.gray(oInMo.getSrc());
+                VisionMat oBinary = new VisionMat();
+                Imgproc.threshold(oGray.getMat(), oBinary.getMat(),
+                        0, 255,
+                        Imgproc.THRESH_BINARY_INV | Imgproc.THRESH_OTSU);
+                if (oInMo.isDebug()) {
+                    oGray.save(oInMo.getDirPath4Debug() + "debug_gray.bmp");
+                    oBinary.save(oInMo.getDirPath4Debug() + "debug_bin.bmp");
+                }
+
+                //destroyBatch
+                VisionMat.destroyBatch(Arrays.asList(oGray));
+                return oBinary;
+            }
+        });
 
         return oOutMo;
     }
+
+    //#endregion
 
     //#endregion
 
